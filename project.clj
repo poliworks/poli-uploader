@@ -7,6 +7,7 @@
                  [clj-aws-s3 "0.3.10"]
                  [ring/ring-json "0.4.0"]
                  [digest "1.4.5"]
+                 [jumblerg/ring.middleware.cors "1.0.1"]
                  [ring/ring-defaults "0.2.1"]]
   :plugins [[lein-ring "0.9.7"]]
   :ring {:handler poli-uploader.handler/app

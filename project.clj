@@ -9,7 +9,8 @@
                  [digest "1.4.5"]
                  [ring/ring-defaults "0.2.1"]]
   :plugins [[lein-ring "0.9.7"]]
-  :ring {:handler poli-uploader.handler/app}
+  :ring {:handler poli-uploader.handler/app
+         :port 5000}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
                         [ring/ring-mock "0.3.0"]]}})

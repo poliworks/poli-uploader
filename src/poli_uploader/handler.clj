@@ -9,12 +9,8 @@
             [digest]
             [ring.middleware.defaults :refer [wrap-defaults api-defaults]]))
 
-(defn debug [v]
-  (println v)
-  v)
-
-(def aws-cred {:access-key (debug (System/getenv "AWS_ACCESS_KEY"))
-               :secret-key (debug (System/getenv "AWS_SECRET_KEY"))})
+(def aws-cred {:access-key (System/getenv "AWS_ACCESS_KEY")
+               :secret-key (System/getenv "AWS_SECRET_KEY")})
 
 (defn upload-object [info file]
   (let [key (str (:type info) "/" (digest/digest "md5" file) "." (:extension info))]
